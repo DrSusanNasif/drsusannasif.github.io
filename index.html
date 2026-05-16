@@ -4,16 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Susan Nasif Obeid-Adorisio, PhD</title>
-<meta name="description" content="Senior biomedical scientist. AI in clinical medicine, translational research, and health communication.">
+<meta name="description" content="Senior biomedical scientist and biotech CEO. AI in clinical medicine, translational research, and health communication.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
+  :root {
+    --bg: #FFFFFF;
+    --ink: #0A0A0A;
+    --ink-2: #3A3A3A;
+    --ink-3: #7A7A7A;
+    --bordeaux: #6E1F2A;
+    --bordeaux-soft: rgba(110, 31, 42, 0.18);
+    --green: #00A85E;
+    --hairline: rgba(0, 0, 0, 0.08);
+  }
+
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
-    background: #F4EFE7;
-    color: #1A1612;
+    background: var(--bg);
+    color: var(--ink);
     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight: 300;
     line-height: 1.6;
@@ -26,244 +37,374 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 0.5px solid rgba(110, 31, 42, 0.2);
+    border-bottom: 0.5px solid var(--hairline);
     max-width: 1100px;
     margin: 0 auto;
   }
-  .logo { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; }
+  .logo {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+  }
   .logo em { font-style: italic; }
-  .logo .slash { color: #6E1F2A; margin: 0 10px; }
+  .logo .slash { color: var(--bordeaux); margin: 0 10px; }
   .logo .phd {
     font-family: 'Montserrat', sans-serif;
     font-size: 11px;
     letter-spacing: 0.22em;
-    color: #7A7167;
+    color: var(--ink-3);
     font-weight: 400;
   }
-  .nav-links { display: flex; gap: 28px; font-size: 11px; letter-spacing: 0.2em; color: #4A413A; }
+  .status-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--green);
+    border-radius: 50%;
+    margin-left: 14px;
+    animation: subtle-pulse 2.8s ease-in-out infinite;
+  }
+  @keyframes subtle-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.45; }
+  }
+  .nav-links { display: flex; gap: 28px; font-size: 11px; letter-spacing: 0.2em; color: var(--ink-2); }
   .nav-links a { color: inherit; text-decoration: none; transition: color 0.2s; }
-  .nav-links a:hover { color: #6E1F2A; }
+  .nav-links a:hover { color: var(--bordeaux); }
 
-  .hero { padding: 90px 40px 80px; opacity: 0; animation: fadeUp 0.8s ease forwards; }
-  .section-label { font-size: 11px; letter-spacing: 0.24em; color: #6E1F2A; margin-bottom: 28px; }
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    color: var(--bordeaux);
+    margin-bottom: 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .label-dot {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background: var(--green);
+    border-radius: 50%;
+  }
+
+  .hero {
+    padding: 100px 40px 90px;
+    position: relative;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards;
+  }
+  .hero-mark {
+    position: absolute;
+    right: 40px;
+    top: 80px;
+    width: 50px;
+    height: 380px;
+    opacity: 0.55;
+    pointer-events: none;
+  }
   h1 {
     font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 72px;
-    line-height: 1.05;
+    font-size: 74px;
+    line-height: 1.04;
     font-weight: 400;
-    margin-bottom: 32px;
-    letter-spacing: -0.015em;
+    margin-bottom: 36px;
+    letter-spacing: -0.018em;
     max-width: 880px;
+    color: var(--ink);
   }
-  h1 em { font-style: italic; color: #6E1F2A; }
-  .hero-sub { font-size: 17px; line-height: 1.7; max-width: 620px; color: #3A332D; }
+  h1 em { font-style: italic; color: var(--bordeaux); }
+  .hero-sub {
+    font-size: 17px;
+    line-height: 1.75;
+    max-width: 640px;
+    color: var(--ink-2);
+    font-weight: 300;
+  }
 
   .strip {
-    background: #1A1612;
-    color: #F4EFE7;
-    padding: 36px 40px;
+    background: var(--ink);
+    color: #FFFFFF;
+    padding: 42px 40px;
     opacity: 0;
-    animation: fadeUp 0.8s ease 0.2s forwards;
+    animation: fadeUp 0.9s ease 0.2s forwards;
   }
   .strip-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+    gap: 28px;
     max-width: 1100px;
     margin: 0 auto;
   }
-  .strip-label { font-size: 10px; letter-spacing: 0.22em; color: #C9A47A; margin-bottom: 8px; }
-  .strip-value { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px; }
+  .strip-label {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--green);
+    margin-bottom: 10px;
+  }
+  .strip-value {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.35;
+    color: #FFFFFF;
+  }
 
-  .section { padding: 90px 40px; max-width: 1100px; margin: 0 auto; }
+  .section { padding: 100px 40px; max-width: 1100px; margin: 0 auto; }
   .section h2 {
     font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 42px;
+    font-size: 44px;
     font-weight: 400;
-    margin-bottom: 50px;
-    line-height: 1.15;
+    margin-bottom: 56px;
+    line-height: 1.12;
+    letter-spacing: -0.012em;
   }
-  .section h2 em { font-style: italic; color: #6E1F2A; }
+  .section h2 em { font-style: italic; color: var(--bordeaux); }
   .section-intro {
     font-size: 16px;
-    color: #3A332D;
+    color: var(--ink-2);
     max-width: 620px;
-    margin-bottom: 50px;
-    margin-top: -32px;
-    line-height: 1.7;
+    margin-bottom: 56px;
+    margin-top: -40px;
+    line-height: 1.75;
+    font-weight: 300;
   }
-  .section-intro a { color: #6E1F2A; text-decoration: none; border-bottom: 1px solid #C9A47A; }
+  .section-intro a { color: var(--bordeaux); text-decoration: none; border-bottom: 1px solid var(--green); }
 
-  .streams-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
-  .stream { border-top: 1px solid #6E1F2A; padding-top: 18px; transition: transform 0.3s ease; }
+  .streams-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 36px; }
+  .stream {
+    border-top: 1px solid var(--bordeaux);
+    padding-top: 20px;
+    transition: transform 0.35s ease;
+    position: relative;
+  }
   .stream:hover { transform: translateY(-4px); }
   .stream-num {
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-style: italic;
     font-size: 14px;
-    color: #6E1F2A;
-    margin-bottom: 12px;
+    color: var(--bordeaux);
+    margin-bottom: 14px;
   }
   .stream h3 {
     font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 24px;
+    font-size: 25px;
     font-weight: 400;
-    margin-bottom: 14px;
-    line-height: 1.25;
+    margin-bottom: 16px;
+    line-height: 1.22;
   }
-  .stream p { font-size: 14px; line-height: 1.7; color: #3A332D; }
+  .stream p { font-size: 14px; line-height: 1.75; color: var(--ink-2); }
+
+  .awards-strip {
+    margin-top: 80px;
+    padding-top: 56px;
+    border-top: 0.5px solid var(--bordeaux-soft);
+  }
+  .awards-label {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    color: var(--bordeaux);
+    font-size: 18px;
+    margin-bottom: 32px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .awards-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+  .award-year {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    color: var(--bordeaux);
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .award-name {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.3;
+    margin-bottom: 6px;
+    color: var(--ink);
+  }
+  .award-org { font-size: 12px; color: var(--ink-2); line-height: 1.55; letter-spacing: 0.01em; }
 
   .entry {
     display: grid;
-    grid-template-columns: 140px 1fr;
-    gap: 40px;
-    padding: 28px 0;
-    border-top: 0.5px solid rgba(110, 31, 42, 0.18);
+    grid-template-columns: 150px 1fr;
+    gap: 44px;
+    padding: 32px 0;
+    border-top: 0.5px solid var(--bordeaux-soft);
   }
-  .entry:last-child { border-bottom: 0.5px solid rgba(110, 31, 42, 0.18); }
+  .entry:last-child { border-bottom: 0.5px solid var(--bordeaux-soft); }
   .entry-year {
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-style: italic;
-    color: #6E1F2A;
+    color: var(--bordeaux);
     font-size: 16px;
     padding-top: 2px;
   }
   .entry-role {
     font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 22px;
+    font-size: 23px;
     font-weight: 400;
     line-height: 1.3;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
+    color: var(--ink);
   }
   .entry-org {
     font-size: 12px;
     letter-spacing: 0.16em;
-    color: #6E1F2A;
+    color: var(--bordeaux);
     text-transform: uppercase;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
   }
-  .entry-desc { font-size: 14px; line-height: 1.7; color: #3A332D; max-width: 680px; }
+  .entry-desc { font-size: 14px; line-height: 1.75; color: var(--ink-2); max-width: 680px; }
+  .entry-desc a { color: var(--bordeaux); text-decoration: none; border-bottom: 1px solid var(--green); }
 
-  .pubs { display: grid; grid-template-columns: 200px 1fr; gap: 40px; margin-bottom: 36px; }
+  .pubs { display: grid; grid-template-columns: 200px 1fr; gap: 44px; margin-bottom: 40px; }
   .pubs-group {
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-style: italic;
-    color: #6E1F2A;
+    color: var(--bordeaux);
     font-size: 18px;
     padding-top: 2px;
   }
   .pubs-list { list-style: none; }
   .pubs-list li {
-    padding: 10px 0;
-    border-top: 0.5px solid rgba(110, 31, 42, 0.15);
+    padding: 12px 0;
+    border-top: 0.5px solid var(--bordeaux-soft);
     font-size: 14px;
-    line-height: 1.6;
-    color: #3A332D;
+    line-height: 1.7;
+    color: var(--ink-2);
   }
   .pubs-list li:first-child { border-top: none; padding-top: 0; }
+  .pubs-list li a { color: var(--bordeaux); text-decoration: none; border-bottom: 1px solid var(--green); }
   .pubs-list .item-year {
     font-family: 'Cormorant Garamond', Georgia, serif;
-    color: #6E1F2A;
+    color: var(--bordeaux);
     font-style: italic;
     margin-right: 10px;
   }
 
-  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: start; }
   .contact-lead {
     font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 28px;
+    font-size: 30px;
     line-height: 1.3;
     font-weight: 400;
+    color: var(--ink);
   }
-  .contact-lead em { font-style: italic; color: #6E1F2A; }
-  .contact-rows { display: flex; flex-direction: column; gap: 18px; }
-  .contact-row { border-top: 0.5px solid rgba(110, 31, 42, 0.18); padding-top: 14px; }
+  .contact-lead em { font-style: italic; color: var(--bordeaux); }
+  .contact-rows { display: flex; flex-direction: column; gap: 20px; }
+  .contact-row { border-top: 0.5px solid var(--bordeaux-soft); padding-top: 16px; }
   .contact-row:first-child { border-top: none; padding-top: 0; }
-  .contact-label { font-size: 10px; letter-spacing: 0.22em; color: #6E1F2A; margin-bottom: 6px; }
-  .contact-value { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 17px; }
-  .contact-value a { color: #1A1612; text-decoration: none; border-bottom: 1px solid #C9A47A; }
-  .contact-value a:hover { color: #6E1F2A; border-bottom-color: #6E1F2A; }
+  .contact-label {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--bordeaux);
+    margin-bottom: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .contact-label::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background: var(--green);
+    border-radius: 50%;
+  }
+  .contact-value { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 17px; color: var(--ink); }
+  .contact-value a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--bordeaux-soft); transition: border-color 0.2s, color 0.2s; }
+  .contact-value a:hover { color: var(--bordeaux); border-bottom-color: var(--bordeaux); }
 
-  .cta { background: #6E1F2A; color: #F4EFE7; padding: 56px 40px; }
+  .cta { background: var(--bordeaux); color: #FFFFFF; padding: 64px 40px; }
   .cta-inner {
     max-width: 1100px;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 32px;
+    gap: 36px;
   }
   .cta-quote {
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-style: italic;
-    font-size: 28px;
+    font-size: 30px;
     line-height: 1.3;
-    max-width: 560px;
+    max-width: 580px;
   }
   .cta-btn {
     display: inline-block;
-    border: 1px solid #F4EFE7;
-    padding: 16px 28px;
+    border: 1px solid #FFFFFF;
+    padding: 18px 30px;
     font-size: 11px;
     letter-spacing: 0.22em;
-    color: #F4EFE7;
+    color: #FFFFFF;
     text-decoration: none;
     white-space: nowrap;
     transition: all 0.25s;
   }
-  .cta-btn:hover { background: #F4EFE7; color: #6E1F2A; }
+  .cta-btn:hover { background: #FFFFFF; color: var(--bordeaux); }
 
   footer {
-    padding: 36px 40px;
+    padding: 40px;
     font-size: 12px;
-    color: #7A7167;
+    color: var(--ink-3);
     display: flex;
     justify-content: space-between;
-    border-top: 0.5px solid rgba(110, 31, 42, 0.15);
+    border-top: 0.5px solid var(--hairline);
     max-width: 1100px;
     margin: 0 auto;
   }
-  footer a { color: #6E1F2A; text-decoration: none; transition: opacity 0.2s; }
+  footer a { color: var(--bordeaux); text-decoration: none; transition: opacity 0.2s; }
   footer a:hover { opacity: 0.7; }
 
   @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(12px); }
+    from { opacity: 0; transform: translateY(14px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
   @media (max-width: 900px) {
     h1 { font-size: 56px; }
     .section h2 { font-size: 34px; }
-    .streams-grid { gap: 24px; }
+    .streams-grid { gap: 28px; }
+    .awards-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+    .hero-mark { display: none; }
   }
 
   @media (max-width: 700px) {
     nav { flex-direction: column; gap: 18px; padding: 22px 24px; }
     .nav-links { gap: 14px; font-size: 10px; flex-wrap: wrap; justify-content: center; }
-    .hero { padding: 56px 24px 48px; }
-    h1 { font-size: 38px; }
+    .hero { padding: 60px 24px 52px; }
+    h1 { font-size: 40px; }
     .hero-sub { font-size: 15px; }
-    .strip { padding: 28px 24px; }
-    .strip-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
-    .section { padding: 56px 24px; }
-    .section h2 { font-size: 28px; margin-bottom: 32px; }
-    .section-intro { margin-top: -20px; margin-bottom: 32px; }
-    .streams-grid { grid-template-columns: 1fr; gap: 28px; }
-    .entry { grid-template-columns: 1fr; gap: 8px; padding: 22px 0; }
-    .pubs { grid-template-columns: 1fr; gap: 14px; }
-    .contact-grid { grid-template-columns: 1fr; gap: 36px; }
-    .contact-lead { font-size: 22px; }
-    .cta { padding: 40px 24px; }
+    .strip { padding: 32px 24px; }
+    .strip-grid { grid-template-columns: 1fr 1fr; gap: 22px; }
+    .section { padding: 64px 24px; }
+    .section h2 { font-size: 30px; margin-bottom: 36px; }
+    .section-intro { margin-top: -22px; margin-bottom: 36px; }
+    .streams-grid { grid-template-columns: 1fr; gap: 30px; }
+    .awards-strip { margin-top: 56px; padding-top: 40px; }
+    .awards-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .entry { grid-template-columns: 1fr; gap: 10px; padding: 24px 0; }
+    .pubs { grid-template-columns: 1fr; gap: 16px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .contact-lead { font-size: 24px; }
+    .cta { padding: 44px 24px; }
     .cta-inner { flex-direction: column; align-items: flex-start; }
-    .cta-quote { font-size: 22px; }
-    footer { flex-direction: column; gap: 8px; padding: 28px 24px; }
+    .cta-quote { font-size: 24px; }
+    footer { flex-direction: column; gap: 8px; padding: 30px 24px; }
   }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="logo"><em>Susan Nasif</em><span class="slash">/</span><span class="phd">PhD</span></div>
+  <div class="logo">
+    <em>Susan Nasif</em><span class="slash">/</span><span class="phd">PhD</span>
+    <span class="status-dot" aria-label="Available for new work"></span>
+  </div>
   <div class="nav-links">
     <a href="#practice">PRACTICE</a>
     <a href="#work">WORK</a>
@@ -274,30 +415,37 @@
 </nav>
 
 <section class="hero container">
-  <div class="section-label">N° 01 / PRACTICE</div>
+  <svg class="hero-mark" viewBox="0 0 50 380" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <line x1="25" y1="10" x2="25" y2="370" stroke="#6E1F2A" stroke-width="0.8" opacity="0.5"/>
+    <circle cx="25" cy="40" r="3" fill="#6E1F2A"/>
+    <circle cx="25" cy="130" r="2.5" fill="#00A85E"/>
+    <circle cx="25" cy="220" r="2" fill="#6E1F2A" opacity="0.55"/>
+    <circle cx="25" cy="310" r="2.5" fill="#00A85E"/>
+  </svg>
+  <div class="section-label"><span class="label-dot"></span>N° 01 / PRACTICE</div>
   <h1>I work where <em>AI, virology,</em> and <em>storytelling</em> meet.</h1>
   <p class="hero-sub">
-    Twenty years across antiviral research, vaccine literacy, and AI in clinical medicine. From KU Leuven antiviral labs to the European Commission and a United Nations report on AI governance.
+    Twenty years across antiviral research, vaccine literacy, and AI in clinical medicine. Antiviral research at KU Leuven, projects commissioned by the European Commission, contributor to a United Nations report on AI governance.
   </p>
 </section>
 
 <section class="strip">
   <div class="strip-grid">
-    <div><div class="strip-label">TRAINED AT</div><div class="strip-value">KU Leuven, Belgium</div></div>
-    <div><div class="strip-label">COMMISSIONED BY</div><div class="strip-value">European Commission</div></div>
-    <div><div class="strip-label">AUTHOR</div><div class="strip-value">UN report on AI</div></div>
-    <div><div class="strip-label">GUEST LECTURER</div><div class="strip-value">UCLA, virology</div></div>
+    <div><div class="strip-label">FUNDED BY</div><div class="strip-value">European Commission, DG-SANTE</div></div>
+    <div><div class="strip-label">CONTRIBUTOR</div><div class="strip-value">UN report on AI governance</div></div>
+    <div><div class="strip-label">APPOINTED TO</div><div class="strip-value">WHO/EU Innovation Platform</div></div>
+    <div><div class="strip-label">REVIEWER</div><div class="strip-value">BioExpert Network</div></div>
   </div>
 </section>
 
 <section class="section" id="practice">
-  <div class="section-label">N° 02 / THREE STREAMS</div>
+  <div class="section-label"><span class="label-dot"></span>N° 02 / THREE STREAMS</div>
   <h2>What I take on.</h2>
   <div class="streams-grid">
     <div class="stream">
       <div class="stream-num">01 / Practice</div>
       <h3>AI in clinical medicine.</h3>
-      <p>Training and advisory for hospitals, scientific societies, and biotech teams adopting machine learning in practice. SIIAM-affiliated.</p>
+      <p>Training and advisory for hospitals, scientific societies, and biotech teams adopting machine learning in practice. Active member of the Italian and European societies of AI in Medicine, SIIAM and ESAIH.</p>
     </div>
     <div class="stream">
       <div class="stream-num">02 / Research</div>
@@ -307,13 +455,39 @@
     <div class="stream">
       <div class="stream-num">03 / Public</div>
       <h3>Health communication.</h3>
-      <p>Patient, family, and policy-facing work in three languages. Commissioned by the European Commission, Novartis, Università Cattolica.</p>
+      <p>Patient, family, and policy-facing work in three languages. Commissioned by the European Commission, pharmaceutical companies, ASU, and Università Cattolica.</p>
+    </div>
+  </div>
+
+  <div class="awards-strip">
+    <div class="awards-label"><span class="label-dot"></span>Recognition in health communication</div>
+    <div class="awards-grid">
+      <div>
+        <div class="award-year">2015</div>
+        <div class="award-name">Science Hero Award</div>
+        <div class="award-org">Invitrogen / ThermoFisher, USA</div>
+      </div>
+      <div>
+        <div class="award-year">2017</div>
+        <div class="award-name">Innovation in Science Literacy</div>
+        <div class="award-org">Gold, ISLA UK</div>
+      </div>
+      <div>
+        <div class="award-year">2018</div>
+        <div class="award-name">European Vaccines Communication Champion</div>
+        <div class="award-org">Silver, Vaccines Today EU</div>
+      </div>
+      <div>
+        <div class="award-year">2020</div>
+        <div class="award-name">Health Literacy Award</div>
+        <div class="award-org">Finalist, MSD-Merck, Belgium</div>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="section" id="work">
-  <div class="section-label">N° 03 / WORK</div>
+  <div class="section-label"><span class="label-dot"></span>N° 03 / WORK</div>
   <h2>Selected <em>programmes</em>.</h2>
 
   <div class="entry">
@@ -364,17 +538,17 @@
   <div class="entry">
     <div class="entry-year">2012 → 2014</div>
     <div>
-      <div class="entry-role">Research Scientist, Antiviral Drug Discovery</div>
-      <div class="entry-org">KU Leuven, funded by Wellcome Trust and Janssen</div>
-      <p class="entry-desc">Postdoctoral-level research on antiviral therapeutics targeting dengue virus, covering both prophylactic and therapeutic modalities.</p>
+      <div class="entry-role">Researcher, Antiviral Drug Discovery</div>
+      <div class="entry-org">KU Leuven, Belgium · INSERM U271, Lyon, France</div>
+      <p class="entry-desc">Contributed as a Researcher to antiviral therapeutics studies on dengue virus, covering both prophylactic and therapeutic modalities. Funded by the Wellcome Trust in partnership with Janssen Pharmaceuticals. Pre-doctoral research training at INSERM U271, Lyon.</p>
     </div>
   </div>
 </section>
 
 <section class="section" id="writing">
-  <div class="section-label">N° 04 / WRITING</div>
+  <div class="section-label"><span class="label-dot"></span>N° 04 / WRITING</div>
   <h2>Published <em>work</em>.</h2>
-  <p class="section-intro">From peer-reviewed virology research to commissioned health literacy books and a report to the United Nations on AI governance. A selection below. Full record on <a href="https://orcid.org/0009-0003-4382-7200">ORCID</a>.</p>
+  <p class="section-intro">From peer-reviewed virology research to commissioned health literacy books and a contribution to a United Nations report on AI governance. A selection below. Full record on <a href="https://orcid.org/0009-0003-4382-7200">ORCID</a>.</p>
 
   <div class="pubs">
     <div class="pubs-group">Peer-reviewed</div>
@@ -389,7 +563,7 @@
     <ul class="pubs-list">
       <li>Three books published by the Directorate-General, European Commission.</li>
       <li>One book published by KFAS, Kuwait Foundation for the Advancement of Sciences.</li>
-      <li>Report to the United Nations on global governance of AI.</li>
+      <li>Contribution to a report to the United Nations on global governance of AI.</li>
     </ul>
   </div>
 
@@ -402,7 +576,7 @@
 </section>
 
 <section class="section" id="speaking">
-  <div class="section-label">N° 05 / SPEAKING</div>
+  <div class="section-label"><span class="label-dot"></span>N° 05 / SPEAKING</div>
   <h2>Talks and <em>chairing</em>.</h2>
 
   <div class="entry">
@@ -448,19 +622,19 @@
 </section>
 
 <section class="section" id="contact">
-  <div class="section-label">N° 06 / CONTACT</div>
+  <div class="section-label"><span class="label-dot"></span>N° 06 / CONTACT</div>
   <div class="contact-grid">
     <div>
       <div class="contact-lead">Open to <em>conversations</em> on AI in clinical practice, translational R&amp;D direction, and health communication work that has to reach across cultures.</div>
     </div>
     <div class="contact-rows">
       <div class="contact-row">
-        <div class="contact-label">EMAIL</div>
-        <div class="contact-value"><a href="mailto:susan.noadorisio@libero.it">susan.noadorisio@libero.it</a></div>
-      </div>
-      <div class="contact-row">
         <div class="contact-label">LINKEDIN</div>
         <div class="contact-value"><a href="https://www.linkedin.com/in/susannasifphd">susannasifphd</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-label">X</div>
+        <div class="contact-value"><a href="https://x.com/DrSusanNasif">@DrSusanNasif</a></div>
       </div>
       <div class="contact-row">
         <div class="contact-label">ORCID</div>
@@ -481,13 +655,13 @@
 <section class="cta">
   <div class="cta-inner">
     <div class="cta-quote">"Lab bench. Lecture hall. Drawing table. The same job, in three rooms."</div>
-    <a href="mailto:susan.noadorisio@libero.it" class="cta-btn">START A CONVERSATION →</a>
+    <a href="https://www.linkedin.com/in/susannasifphd" class="cta-btn">START A CONVERSATION →</a>
   </div>
 </section>
 
 <footer>
   <div>Susan Nasif Obeid-Adorisio, PhD · Basilicata, Italy</div>
-  <div><a href="https://www.linkedin.com/in/susannasifphd">LinkedIn</a> · <a href="https://orcid.org/0009-0003-4382-7200">ORCID</a></div>
+  <div><a href="https://www.linkedin.com/in/susannasifphd">LinkedIn</a> · <a href="https://x.com/DrSusanNasif">X</a> · <a href="https://orcid.org/0009-0003-4382-7200">ORCID</a></div>
 </footer>
 
 </body>
