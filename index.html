@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Susan Nasif Obeid-Adorisio, PhD</title>
+<meta name="description" content="Senior biomedical scientist. AI in clinical medicine, translational research, and health communication.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: #F4EFE7;
+    color: #1A1612;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  /* Nav */
+  nav {
+    padding: 28px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.5px solid rgba(110, 31, 42, 0.2);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .logo {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 22px;
+  }
+  .logo em { font-style: italic; }
+  .logo .slash { color: #6E1F2A; margin: 0 10px; }
+  .logo .phd {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: #7A7167;
+    font-weight: 400;
+  }
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: #4A413A;
+  }
+  .nav-links a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: #6E1F2A; }
+
+  /* Hero */
+  .hero { padding: 90px 40px 80px; opacity: 0; animation: fadeUp 0.8s ease forwards; }
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    color: #6E1F2A;
+    margin-bottom: 28px;
+  }
+  h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 72px;
+    line-height: 1.05;
+    font-weight: 400;
+    margin-bottom: 32px;
+    letter-spacing: -0.015em;
+    max-width: 880px;
+  }
+  h1 em { font-style: italic; color: #6E1F2A; }
+  .hero-sub {
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 620px;
+    color: #3A332D;
+  }
+
+  /* Credibility strip */
+  .strip {
+    background: #1A1612;
+    color: #F4EFE7;
+    padding: 36px 40px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+  .strip-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .strip-label {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: #C9A47A;
+    margin-bottom: 8px;
+  }
+  .strip-value {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 18px;
+  }
+
+  /* Streams */
+  .streams { padding: 80px 40px; }
+  .streams h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 38px;
+    font-weight: 400;
+    margin-bottom: 44px;
+  }
+  .streams-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+  }
+  .stream {
+    border-top: 1px solid #6E1F2A;
+    padding-top: 18px;
+    transition: transform 0.3s ease;
+  }
+  .stream:hover { transform: translateY(-4px); }
+  .stream-num {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 14px;
+    color: #6E1F2A;
+    margin-bottom: 12px;
+  }
+  .stream h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 14px;
+    line-height: 1.25;
+  }
+  .stream p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #3A332D;
+  }
+
+  /* CTA */
+  .cta {
+    background: #6E1F2A;
+    color: #F4EFE7;
+    padding: 56px 40px;
+  }
+  .cta-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+  .cta-quote {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 28px;
+    line-height: 1.3;
+    max-width: 560px;
+  }
+  .cta-btn {
+    display: inline-block;
+    border: 1px solid #F4EFE7;
+    padding: 16px 28px;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: #F4EFE7;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.25s;
+  }
+  .cta-btn:hover { background: #F4EFE7; color: #6E1F2A; }
+
+  /* Footer */
+  footer {
+    padding: 36px 40px;
+    font-size: 12px;
+    color: #7A7167;
+    display: flex;
+    justify-content: space-between;
+    border-top: 0.5px solid rgba(110, 31, 42, 0.15);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  footer a {
+    color: #6E1F2A;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  footer a:hover { opacity: 0.7; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Tablet */
+  @media (max-width: 900px) {
+    h1 { font-size: 56px; }
+    .streams-grid { gap: 24px; }
+  }
+
+  /* Mobile */
+  @media (max-width: 700px) {
+    nav { flex-direction: column; gap: 18px; padding: 22px 24px; }
+    .nav-links { gap: 16px; font-size: 10px; flex-wrap: wrap; justify-content: center; }
+    .hero { padding: 56px 24px 48px; }
+    h1 { font-size: 38px; }
+    .hero-sub { font-size: 15px; }
+    .strip { padding: 28px 24px; }
+    .strip-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+    .streams { padding: 56px 24px; }
+    .streams h2 { font-size: 28px; margin-bottom: 32px; }
+    .streams-grid { grid-template-columns: 1fr; gap: 28px; }
+    .cta { padding: 40px 24px; }
+    .cta-inner { flex-direction: column; align-items: flex-start; }
+    .cta-quote { font-size: 22px; }
+    footer { flex-direction: column; gap: 8px; padding: 28px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <em>Susan Nasif</em><span class="slash">/</span><span class="phd">PhD</span>
+  </div>
+  <div class="nav-links">
+    <a href="#practice">PRACTICE</a>
+    <a href="#work">WORK</a>
+    <a href="#writing">WRITING</a>
+    <a href="#speaking">SPEAKING</a>
+    <a href="#contact" class="active">CONTACT</a>
+  </div>
+</nav>
+
+<section class="hero container">
+  <div class="section-label">N° 01 / PRACTICE</div>
+  <h1>I work where <em>AI, virology,</em> and <em>storytelling</em> meet.</h1>
+  <p class="hero-sub">
+    Twenty years across antiviral research, vaccine literacy, and AI in clinical medicine. From KU Leuven antiviral labs to the European Commission and a United Nations report on AI governance.
+  </p>
+</section>
+
+<section class="strip">
+  <div class="strip-grid">
+    <div>
+      <div class="strip-label">TRAINED AT</div>
+      <div class="strip-value">KU Leuven, Belgium</div>
+    </div>
+    <div>
+      <div class="strip-label">COMMISSIONED BY</div>
+      <div class="strip-value">European Commission</div>
+    </div>
+    <div>
+      <div class="strip-label">AUTHOR</div>
+      <div class="strip-value">UN report on AI</div>
+    </div>
+    <div>
+      <div class="strip-label">GUEST LECTURER</div>
+      <div class="strip-value">UCLA, virology</div>
+    </div>
+  </div>
+</section>
+
+<section class="streams container" id="practice">
+  <div class="section-label">N° 02 / THREE STREAMS</div>
+  <h2>What I take on.</h2>
+  <div class="streams-grid">
+    <div class="stream">
+      <div class="stream-num">01 / Practice</div>
+      <h3>AI in clinical medicine.</h3>
+      <p>Training and advisory for hospitals, scientific societies, and biotech teams adopting machine learning in practice. SIIAM-affiliated.</p>
+    </div>
+    <div class="stream">
+      <div class="stream-num">02 / Research</div>
+      <h3>Translational direction.</h3>
+      <p>Scientific leadership for early-stage programmes in precision medicine and multiomics. Currently leading STaiMIC.</p>
+    </div>
+    <div class="stream">
+      <div class="stream-num">03 / Public</div>
+      <h3>Health communication.</h3>
+      <p>Patient, family, and policy-facing work in three languages. Commissioned by the European Commission, Novartis, Università Cattolica.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="cta-inner">
+    <div class="cta-quote">"Lab bench. Lecture hall. Drawing table. The same job, in three rooms."</div>
+    <a href="mailto:susan.noadorisio@libero.it" class="cta-btn">START A CONVERSATION →</a>
+  </div>
+</section>
+
+<footer>
+  <div>Susan Nasif Obeid-Adorisio, PhD · Basilicata, Italy</div>
+  <div><a href="https://www.linkedin.com/in/susannasifphd">LinkedIn</a> · <a href="https://orcid.org/0009-0003-4382-7200">ORCID</a></div>
+</footer>
+
+</body>
+</html>
