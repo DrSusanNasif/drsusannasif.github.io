@@ -37,3 +37,4 @@ footer{flex-wrap:wrap}.footer-links{order:-1;flex-basis:100%;display:flex;flex-w
 @media(max-width:980px){.course-card{grid-template-columns:1fr}.course-side{border-right:0;border-bottom:1px solid var(--line)}.learning-grid{grid-template-columns:1fr}}
 @media(max-width:720px){.course-side,.course-copy{padding:28px}.syllabus{grid-template-columns:1fr}.article-card{padding:24px}.ar{padding:18px 4px}.sub-cta{padding:24px}}
 .learning-grid.single{grid-template-columns:1fr}
+.footer-privacy{order:10;flex-basis:100%;margin:0;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font:10px/1.6 var(--mono);letter-spacing:.03em;text-transform:none}
