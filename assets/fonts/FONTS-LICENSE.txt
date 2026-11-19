@@ -1,0 +1,1 @@
+Fonts in this folder (Unbounded, Manrope, JetBrains Mono) are licensed under the SIL Open Font License 1.1: https://openfontlicense.org
