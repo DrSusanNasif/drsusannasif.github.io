@@ -356,3 +356,7 @@ footer .legal { grid-column: 1 / -1; font: 400 11.5px var(--mono); color: var(--
 }
 .nav a, .mark span { white-space: nowrap; }
 @media (max-width: 1040px) { .nav { gap: 18px; } .nav a[href="#communication"], .nav a[href="#training"], .nav a[href="#career"], .nav a[href="index.html#training"], .nav a[href="index.html#career"] { display: none; } }
+.venture.slim { grid-template-columns: 1fr; max-width: 900px; margin-inline: auto; text-align: center; }
+.venture.slim .v-text { align-items: center; }
+.venture.slim .flow, .venture.slim .row { justify-content: center; }
+.venture.slim .v-text > p { max-width: 44em; }
