@@ -257,7 +257,7 @@ footer .legal { grid-column: 1 / -1; font: 400 11.5px var(--mono); color: var(--
 }
 
 /* Venture */
-.venture { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 44px 40px; background: radial-gradient(90% 120% at 0% 0%, rgba(156, 123, 255, 0.18), transparent 55%), radial-gradient(80% 100% at 100% 100%, rgba(79, 227, 214, 0.14), transparent 55%), linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.02)); }
+.initiative { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 44px 40px; background: radial-gradient(90% 120% at 0% 0%, rgba(156, 123, 255, 0.18), transparent 55%), radial-gradient(80% 100% at 100% 100%, rgba(79, 227, 214, 0.14), transparent 55%), linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.02)); }
 .v-text { display: flex; flex-direction: column; gap: 20px; }
 .v-text h2 { font-size: clamp(30px, 3.8vw, 50px); }
 .v-text > p { color: var(--muted); }
@@ -284,7 +284,7 @@ footer .legal { grid-column: 1 / -1; font: 400 11.5px var(--mono); color: var(--
 .event p { color: var(--muted); font-size: 14.5px; margin-bottom: 10px; }
 .pending { display: inline-flex; align-items: center; gap: 8px; font: 500 10.5px var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--coral); padding: 5px 10px; border-radius: 999px; border: 1px solid rgba(255, 138, 112, 0.4); background: rgba(255, 138, 112, 0.08); }
 .pending::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--coral); box-shadow: 0 0 10px var(--coral); animation: pulse 2s ease-in-out infinite; }
-@media (max-width: 1040px) { .venture { grid-template-columns: 1fr; padding: 30px 24px; } .events { grid-template-columns: 1fr; } .tile.w6 { grid-column: 1 / -1; } }
+@media (max-width: 1040px) { .initiative { grid-template-columns: 1fr; padding: 30px 24px; } .events { grid-template-columns: 1fr; } .tile.w6 { grid-column: 1 / -1; } }
 @media (max-width: 640px) { .v-grid, .pillars { grid-template-columns: 1fr 1fr; } .event { grid-template-columns: 80px 1fr; } }
 .tile.w6 .viruses { max-width: 720px; }
 
@@ -338,7 +338,7 @@ footer .legal { grid-column: 1 / -1; font: 400 11.5px var(--mono); color: var(--
   .flagship { gap: 26px; }
   .cover span { font-size: 10px; letter-spacing: 0.04em; }
   .event { padding: 20px 16px; gap: 14px; }
-  .venture { padding: 24px 18px; gap: 24px; }
+  .initiative { padding: 24px 18px; gap: 24px; }
   .v-grid { grid-template-columns: 1fr; }
   .tile, .metric, .block { padding: 20px 18px; }
   .globe { padding: 20px 18px; gap: 18px; }
@@ -356,7 +356,7 @@ footer .legal { grid-column: 1 / -1; font: 400 11.5px var(--mono); color: var(--
 }
 .nav a, .mark span { white-space: nowrap; }
 @media (max-width: 1040px) { .nav { gap: 18px; } .nav a[href="#communication"], .nav a[href="#training"], .nav a[href="#career"], .nav a[href="index.html#training"], .nav a[href="index.html#career"] { display: none; } }
-.venture.slim { grid-template-columns: 1fr; max-width: 900px; margin-inline: auto; text-align: center; }
-.venture.slim .v-text { align-items: center; }
-.venture.slim .flow, .venture.slim .row { justify-content: center; }
-.venture.slim .v-text > p { max-width: 44em; }
+.initiative.slim { grid-template-columns: 1fr; max-width: 900px; margin-inline: auto; text-align: center; }
+.initiative.slim .v-text { align-items: center; }
+.initiative.slim .flow, .initiative.slim .row { justify-content: center; }
+.initiative.slim .v-text > p { max-width: 44em; }
