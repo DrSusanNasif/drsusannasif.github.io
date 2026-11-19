@@ -360,3 +360,36 @@ footer .legal { grid-column: 1 / -1; font: 400 11.5px var(--mono); color: var(--
 .initiative.slim .v-text { align-items: center; }
 .initiative.slim .flow, .initiative.slim .row { justify-content: center; }
 .initiative.slim .v-text > p { max-width: 44em; }
+
+/* Simplified edition */
+.services { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.svc { padding: 32px 28px; display: flex; flex-direction: column; gap: 16px; border-top: 2px solid var(--door); background: radial-gradient(120% 80% at 50% 0%, color-mix(in srgb, var(--door) 15%, transparent), transparent 60%), linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.02)); }
+.svc h3 { font-size: 24px; }
+.svc > p { color: var(--muted); }
+.pills { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.pills li { font: 500 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--text); padding: 6px 10px; border-radius: 999px; border: 1px solid var(--line); background: rgba(5,7,13,.5); }
+.svc .paths { margin-top: auto; }
+.work { display: grid; gap: 18px; }
+.item { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; padding: 32px; }
+.item-text { display: flex; flex-direction: column; gap: 12px; }
+.item-text h3 { font-size: 26px; }
+.item-text p { color: var(--muted); }
+.item-text .row { gap: 22px; }
+.item .viruses { grid-template-columns: repeat(3, 1fr); max-width: 420px; justify-self: center; gap: 14px; }
+.bio { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 40px; padding: 36px; align-items: start; }
+.bio h2 { font-size: clamp(28px, 3.4vw, 44px); margin-top: 14px; }
+.bio-text { display: flex; flex-direction: column; gap: 18px; align-items: flex-start; }
+.bio-text p { color: var(--muted); }
+.contact-one { max-width: 860px; margin-inline: auto; text-align: center; align-items: center; padding: 44px 36px; display: flex; flex-direction: column; gap: 22px; background: radial-gradient(120% 120% at 0% 0%, rgba(79,227,214,.16), transparent 50%), radial-gradient(120% 120% at 100% 100%, rgba(156,123,255,.2), transparent 55%), linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.02)); }
+.contact-one h2 { font-size: clamp(30px, 3.8vw, 50px); }
+.contact-one .notice { text-align: left; max-width: 620px; }
+.contact-one .row { justify-content: center; }
+#events .head p a { white-space: nowrap; }
+@media (max-width: 1040px) { .services, .item, .bio { grid-template-columns: 1fr; } .item { gap: 26px; } }
+@media (max-width: 640px) {
+  .svc, .item, .bio { padding: 22px 18px; }
+  .contact-one { padding: 28px 18px; }
+  .item .viruses { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .contact-one .row .btn { width: 100%; justify-content: center; }
+}
+@media (min-width: 1041px) { section { padding: 80px 0; } .head { margin-bottom: 40px; } }
